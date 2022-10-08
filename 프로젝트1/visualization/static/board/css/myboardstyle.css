@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Noto Sans KR', serif;
+    overflow: scroll;
+    overflow-x: unset;
+}
+
+.title{
+    font-family: 'Song Myung', serif;
+    font-size: 58px;
+    background: #fff;
+    color: #3f8edd;
+    text-align: center;
+    padding: 3rem 0;
+    font-weight: bold;
+}
+
+
+#submit > a{
+    display: block;
+    background-color: #3f8edd;
+    color: #fff;
+    font-family: 'Noto Sans KR', serif;
+    border-radius: 50rem;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+    position: absolute; right: 5rem;
+}
+
+#submit > a:hover{
+  background-color: #1d5ea0;
+}
+
+#comment{
+    text-align: center;
+    width: 100%;
+    margin: 0 0;
+    padding: 3rem 10rem;
+    display: table;
+}
+
+#comment > tbody > tr:nth-child(1){
+    font-size: 1.5rem;
+    color: #444b40;
+}
+
+#comment > tbody > tr:nth-child(1) > th:nth-child(1){
+    width: 50%;
+}
+
+#comment > tbody > tr:nth-child(1) > th:nth-child(2){
+    width: 50%;
+}
+
+th{
+    padding: 0;
+    margin: 10px 0 10px 0;
+    height: 15px;
+    color: #444b40;
+}
+
+table{
+    margin: 0;
+    text-align: center;
+    border-spacing: 10px;
+    border-collapse: separate;
+}
+
+td > a{
+    text-decoration: none;
+    font-weight: 500;
+    color: #444b40;
+    padding: 10px 0;
+
+}
+
+fieldset{
+    border: none;
+    color: #444b40;
+}
+
+fieldset b{
+    padding: 0 10px;
+}
+footer{
+    margin: auto;
+    text-align: center;
+    font-family: 'Noto Sans KR', serif;
+    color: #7b8ab8;
+    display: block;
+    box-sizing: border-box;
+    position: fixed; bottom: 0;
+    width: 100%;
+}
