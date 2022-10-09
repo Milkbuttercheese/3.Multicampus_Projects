@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yoga Studio Template">
+    <meta name="keywords" content="Yoga, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fruit Fruit</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
+    <link rel="icon" href="../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Log in / out -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Log out <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Header Section Begin -->
+    <header class="header-section-other">
+        <div class="container-fluid hero-search set-bg" data-setbg="../../static/img/search-bg.jpg">
+            <div class="logo" style="z-index: 2;">
+                <a href="/"><img src="../../static/img/logo/Fruit_Fruit_2_clear.png" alt=""></a>
+            </div>
+            <div class="nav-menu">
+                <nav class="main-menu mobile-menu">
+                    <ul>
+                        <li><a href="/main_login">Recommend</a></li>
+                        <li><a href="/search_result">Search Recipe</a></li>
+                        <li><a href="/pinned_recipe">Pinned Recipe</a></li>
+                        <li><a href="/about_us">About Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Search Section Begin -->
+    <div class="hero-search">
+        <div class="container">
+            <div class="filter-table">
+                <form class="filter-search" action="{% url 'search_result_q' %}" method="get">
+                    <select id="category_1" name="category">
+                        <option value="" selected>Category</option>
+                        <option value="1.India+South America+South Asia <Main ingredients: cumin/coriander/cilantro/lime/avocado/onion>">India, South America, South Asia</option>
+                        <option value="2.East Asia <Main ingredients: rice/soy/sesame/tofu>">East Asia</option>
+                        <option value="3.Dessert+ Bread <Main ingredients: sugar/milk/coconut/vanilla/butter/almond>">Dessert, Bread</option>
+                        <option value="4.West+Etc">West, Etc</option>
+                    </select>
+                    <select id="category_2" name="ingredient1">
+                        <option value="^" selected>Everything's Fine!</option>
+                        <option value="almond">no Almond..</option>
+                        <option value="apple">no Apple..</option>
+                        <option value="banana">no Banana..</option>
+                        <option value="buckwheat">no Buckwheat..</option>
+                        <option value="flour">no Flour..</option>
+                        <option value="butter">no Butter..</option>
+                        <option value="cabbage">no Cabbage..</option>
+                        <option value="cacao">no Cacao..</option>
+                        <option value="cauliflower">no Cauliflower..</option>
+                        <option value="carrot">no Carrot..</option>
+                        <option value="celery">no Celery..</option>
+                        <option value="cheese">no Cheese..</option>
+                        <option value="chocolate">no Chocolate..</option>
+                        <option value="cinnamon">no Cinnamon..</option>
+                        <option value="coconut">no Coconut..</option>
+                        <option value="crab">no Crab..</option>
+                        <option value="cream">no Cream..</option>
+                        <option value="clam">no Clam..</option>
+                        <option value="curry">no Curry..</option>
+                        <option value="egg">no Egg..</option>
+                        <option value="garlic">no Garlic..</option>
+                        <option value="ginger">no Ginger..</option>
+                        <option value="grape">no Grape..</option>
+                        <option value="honey">no Honey..</option>
+                        <option value="kale">no Kale..</option>
+                        <option value="lemon">no Lemon..</option>
+                        <option value="lime">no Lime..</option>
+                        <option value="milk">no Milk..</option>
+                        <option value="mint">no Mint..</option>
+                        <option value="mushroom">no Mushroom..</option>
+                        <option value="olive">no Olive..</option>
+                        <option value="onion">no Onion..</option>
+                        <option value="orange">no Orange..</option>
+                        <option value="paprika">no Paprika..</option>
+                        <option value="peach">no Peach..</option>
+                        <option value="peanut">no Peanut..</option>
+                        <option value="potato">no Potato..</option>
+                        <option value="pumpkin">no Pumpkin..</option>
+                        <option value="rice">no Rice..</option>
+                        <option value="salt">no Salt..</option>
+                        <option value="shrimp">no Shrimp..</option>
+                        <option value="soda">no Soda..</option>
+                        <option value="soy">no Soy..</option>
+                        <option value="sugar">no Sugar..</option>
+                        <option value="sunflower">no Sunflower..</option>
+                        <option value="seaweed">no Seaweed..</option>
+                        <option value="tofu">no Tofu..</option>
+                        <option value="tomato">no Tomato..</option>
+                        <option value="walnut">no Walnut..</option>
+                        <option value="wheat">no Wheat..</option>
+                        <option value="yogurt">no Yogurt..</option>
+                    </select>
+                    <select id="category_3" name="ingredient2">
+                        <option value="^" selected>Everything's Fine!</option>
+                        <option value="almond">no Almond..</option>
+                        <option value="apple">no Apple..</option>
+                        <option value="banana">no Banana..</option>
+                        <option value="buckwheat">no Buckwheat..</option>
+                        <option value="flour">no Flour..</option>
+                        <option value="butter">no Butter..</option>
+                        <option value="cabbage">no Cabbage..</option>
+                        <option value="cacao">no Cacao..</option>
+                        <option value="cauliflower">no Cauliflower..</option>
+                        <option value="carrot">no Carrot..</option>
+                        <option value="celery">no Celery..</option>
+                        <option value="cheese">no Cheese..</option>
+                        <option value="chocolate">no Chocolate..</option>
+                        <option value="cinnamon">no Cinnamon..</option>
+                        <option value="coconut">no Coconut..</option>
+                        <option value="crab">no Crab..</option>
+                        <option value="cream">no Cream..</option>
+                        <option value="clam">no Clam..</option>
+                        <option value="curry">no Curry..</option>
+                        <option value="egg">no Egg..</option>
+                        <option value="garlic">no Garlic..</option>
+                        <option value="ginger">no Ginger..</option>
+                        <option value="grape">no Grape..</option>
+                        <option value="honey">no Honey..</option>
+                        <option value="kale">no Kale..</option>
+                        <option value="lemon">no Lemon..</option>
+                        <option value="lime">no Lime..</option>
+                        <option value="milk">no Milk..</option>
+                        <option value="mint">no Mint..</option>
+                        <option value="mushroom">no Mushroom..</option>
+                        <option value="olive">no Olive..</option>
+                        <option value="onion">no Onion..</option>
+                        <option value="orange">no Orange..</option>
+                        <option value="paprika">no Paprika..</option>
+                        <option value="peach">no Peach..</option>
+                        <option value="peanut">no Peanut..</option>
+                        <option value="potato">no Potato..</option>
+                        <option value="pumpkin">no Pumpkin..</option>
+                        <option value="rice">no Rice..</option>
+                        <option value="salt">no Salt..</option>
+                        <option value="shrimp">no Shrimp..</option>
+                        <option value="soda">no Soda..</option>
+                        <option value="soy">no Soy..</option>
+                        <option value="sugar">no Sugar..</option>
+                        <option value="sunflower">no Sunflower..</option>
+                        <option value="seaweed">no Seaweed..</option>
+                        <option value="tofu">no Tofu..</option>
+                        <option value="tomato">no Tomato..</option>
+                        <option value="walnut">no Walnut..</option>
+                        <option value="wheat">no Wheat..</option>
+                        <option value="yogurt">no Yogurt..</option>
+                    </select>
+                    <input type="text" placeholder="Search" name="q">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Search Section End -->
+
+    <!-- Recipe Preference Start -->
+    <div class="categories-filter-section spad">
+        <div class="recipe-top">
+            <div class="container-fluid">
+                <div class="recipe-title">
+                    <!-- Recipe Title -->
+                    <h2>Search Results</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                {% for recipe in Recipes.object_list %}
+                <div class="col-sm-3">
+                    <div class="cf-filter" id="category-filter">
+                        <div class="embed-responsive embed-responsive-4by3">
+                            <a href="/recipe/{{recipe.recipe_id}}">
+                                {% if recipe.image %}
+                                <img class="card-img-top embed-responsive-item" src="{{ recipe.image }}" width="" alt="{{ recipe }}" />
+                                {% else %}
+                                <img class="card-img-top embed-responsive-item" src="../../static/img/logo/Fruit_Fruit_2_clear.png">
+                                {% endif %}
+                            </a>
+                        </div>
+                        <div class="text-center">
+                            <div class="card-body">
+                                <a href="/recipe/{{recipe.recipe_id}}">
+                                    <h5>{{ recipe.title }}</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Recipe Preference End -->
+
+    <!-- pagination -->
+    <section class="recipe-section" style="padding-bottom: 50px;">
+        <div class="row"  style="width: 100%; text-align: center;">
+            {% if Recipes.paginator.num_pages > 1 %}
+            <div class="col-lg-12" style="display: inline-block;">
+                <div class="recipe-pagination">
+                {% for pg in Recipes.paginator.page_range %}
+                {% if pg >= Recipes.number|add:-5 and pg <= Recipes.number|add:5 %}
+                <a href="?page={{pg}}" class="{% if Recipes.number == pg %}active{% endif %}">{{pg}}</a>
+                {% endif %}
+                {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copyright-text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy; 연봉1조(멀티캠퍼스 데이터사이언스/엔지니어링 15,16회 최종프로젝트 1조) All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    
+    <!-- Search model -->
+	<div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+    
+    <!-- Js Plugins -->
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/jquery.slicknav.js"></script>
+    <script src="../static/js/jquery.nice-select.min.js"></script>
+    <script src="../static/js/mixitup.min.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/signup_2.js"></script>
+</body>
+
+</html>

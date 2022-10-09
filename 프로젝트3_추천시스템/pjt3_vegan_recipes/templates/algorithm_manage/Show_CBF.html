@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+     <title>Blue-Shelter</title>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ </head>
+
+
+ <body>
+
+    <div id="CBF_Model">
+        <div class="recipes">
+        <table class="CBF_Model">
+            <tbody>
+            <tr>
+                    <td> recommended_recipe </td>
+                {% for recipe in recommended_recipe %}
+                    <td> {{recipe}} </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                    <td> ingredients_cosine_similarity </td>
+                {% for cosine in ingredients_cosine_similarity %}
+                    <td> {{cosine}} </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                    <td> user_preferred_recipe </td>
+                {% for recipe in user_preferred_recipe %}
+                    <td> {{recipe}} </td>
+                {% endfor %}
+            </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</body>
+ </html>

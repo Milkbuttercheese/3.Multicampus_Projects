@@ -1,0 +1,34 @@
+<changelist name="Changes" date="1664079684425" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/shelved.patch" />
+  <option name="DESCRIPTION" value="Changes" />
+  <binary>
+    <option name="BEFORE_PATH" value="pjt3_vegan_recipes/Output/CBF_Recommender/CBF_Model" />
+    <option name="AFTER_PATH" value="pjt3_vegan_recipes/Output/CBF_Recommender/CBF_Model" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/CBF_Model" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="pjt3_vegan_recipes/Output/CF_Recommender/CF_Model.h5" />
+    <option name="AFTER_PATH" value="pjt3_vegan_recipes/Output/CF_Recommender/CF_Model.h5" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/CF_Model.h5" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="pjt3_vegan_recipes/Output/Clustering/clusters" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="pjt3_vegan_recipes/Output/Clustering/main_keywords" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="pjt3_vegan_recipes/Output/Clustering/silhouette.jpg" />
+    <option name="AFTER_PATH" value="pjt3_vegan_recipes/Output/Clustering/silhouette.jpg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/silhouette.jpg" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="pjt3_vegan_recipes/Output/Clustering/TF_IDF_matrix" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+</changelist>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yoga Studio Template">
+    <meta name="keywords" content="Yoga, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fruit Fruit</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
+    <link rel="icon" href="../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+
+    <!-- Log in / out -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Log in <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section Begin -->
+    <header class="header-section-other">
+        <div class="container-fluid hero-search set-bg" data-setbg="../static/img/search-bg.jpg">
+            <div class="logo">
+                <a href=""><img src="../static/img/logo/Fruit_Fruit_2_clear.png" alt=""></a>
+            </div>
+            <div class="nav-menu">
+                <nav class="main-menu mobile-menu">
+                    <ul>
+                        <li><a href="/login">Recommend</a></li>
+                        <li><a href="/login">Search Recipe</a></li>
+                        <li><a href="/login">Pinned Recipe</a></li>
+                        <li><a href="/about_us">About Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Contact Section Begin -->
+    <section class="contact-section spad" style="margin-top: 200px;">
+        <div class="container" style="width: 100%; text-align: center;">
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                    <form action="#" class="contact-form" method="POST"> {% csrf_token %}
+                        <h3>Sign Up</h3>
+                        <h5>{{ error }}</h5>
+<!--                        <div class="row">-->
+<!--                            <div class="col-md-9">-->
+<!--                                <input type="text" placeholder="ID" name="user_id" id="user_id">-->
+<!--                            </div>-->
+<!--                            <div class="col-md-3">-->
+<!--                                <button type="button" style="padding: 18px 68px 18px 68px;">Check ID</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" placeholder="ID" name="user_name" id="user_name">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="password" placeholder="Password" name="user_pw" id="user_pw">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="password" placeholder="Check Password" name="re_user_pw" id="re_user_pw">
+                            </div>
+                        </div>
+
+<!--                        <div class="row">-->
+<!--                            <div class="col-md-12">-->
+<!--                                <input type="text" placeholder="Age">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-md-12">-->
+<!--                                <input type="text" placeholder="Gender">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-md-12">-->
+<!--                                <input type="text" placeholder="Height">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-md-12">-->
+<!--                                <input type="text" placeholder="Weight">-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <button type="submit">Sign Up</button>
+                    </form>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copyright-text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy; 연봉1조(멀티캠퍼스 데이터사이언스/엔지니어링 15,16회 최종프로젝트 1조) All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    
+    <!-- Search model -->
+	<div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+    
+    <!-- Js Plugins -->
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/jquery.slicknav.js"></script>
+    <script src="../static/js/jquery.nice-select.min.js"></script>
+    <script src="../static/js/mixitup.min.js"></script>
+    <script src="../static/js/main.js"></script>
+</body>
+
+</html>

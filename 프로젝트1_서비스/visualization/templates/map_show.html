@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blue_Shelter</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'main/assets/favicon.ico' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&family=Song+Myung&display=swap" rel="stylesheet">
+    <link href="{% static 'map/css/map.css' %}" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'map/js/map.js' %}"></script>
+</head>
+
+<body>
+        <!--인포화면-->
+        <div class="total">
+            <div id="info" class="section">
+                <div class="header">Blue Shelter</div>
+                <div class="search_method">
+                    <div class="search_by_loc">
+                        <h1>내 주변 탐색</h1>
+                        <form id="my_search" action="{% url 'radius' %}" method="post">{% csrf_token %}
+                            <input id="userLat" type="hidden" name="userLat">
+                            <input id="userLng" type="hidden" name="userLng">
+
+                            <div class="btns">
+                                <p class="select_dist">원하는 반경을 선택하세요</p>
+                                <input class="current_dist" type="range" min="1" max="20" name="dist" value="10" id="dist-in">
+                                <input class="btn" type="submit" value="입력">
+                            </div>
+                            <div id="dist-out"></div>
+                            <script>
+                                document.querySelector('#dist-in').addEventListener('input',e=>{
+                                document.querySelector('#dist-out').innerHTML= e.target.value + 'km';
+                                });
+                            </script>
+                        </form>
+                    </div>
+                    <hr>
+                    <div class="search_by_name">
+                        <h1>주소로 탐색</h1>
+                        <form id="address_search" action="{% url 'makeMap_by_address'  %}" method="post">{% csrf_token %}
+                            <input class="address_search" type="text" placeholder="주소를 입력하세요" aria-label="Search" name="address" value="{{ address }}">
+                            <div class="btns">
+                                <p class="select_dist">원하는 반경을 선택하세요</p>
+                                <input class="address_dist" type="range" min="1" max="20" name="dist" value="10" id="ex-in">
+                                <input class="btn" type="submit" value="입력">
+                            </div>
+                                <div id="ex-out"></div>
+                                <script>
+                                    document.querySelector('#ex-in').addEventListener('input',e=>{
+                                    document.querySelector('#ex-out').innerHTML= e.target.value + 'km';
+                                    });
+                                </script>
+                        </form>
+                    </div>
+                </div>
+                    <div id="hos_list">
+                        <div class="list">
+                            {% for data in lists %}
+                            <table class="hospital">
+                                <colgroup>
+                                    <col id="col1">
+                                    <col id="col2">
+                                </colgroup>
+                                <thead>
+                                    {% if request.session.mynickname %}
+                                        <tr>
+                                            <th>기관명</th>
+                                            <th><a href="{% url 'mental_agency' data.id %}" target="_blank">{{data.agency}}</a></th>
+                                        </tr>
+                                    {% else %}
+                                        <tr>
+                                            <th>기관명</th>
+                                            <th><a href="#" onclick="alert('로그인이 필요합니다!')">{{data.agency}}</a></th>
+                                        </tr>
+                                    {% endif %}
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>분류</td>
+                                        <td>{{data.categories}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>주소</td>
+                                        <td>{{data.address}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>전화번호</td>
+                                        <td>{{data.phone_numbers}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            {% endfor %}
+                        </div>
+                    </div>
+            </div>
+
+            <!--지도화면-->
+            <div id="view" class="section">
+                <div id="mymap" style="margin: 0; width: 100%; height: 100vh;">{{ mymap|safe }}</div>
+            </div>
+
+            <div class="user">
+                {% if request.session.mynickname %}
+                    <a href="{% url 'mynickboardlist' %}">{{ request.session.mynickname }}</a>
+                    <a href="{% url 'logout' %}">로그아웃</a>
+                {% else %}
+                    <a href="{% url 'login' %}">로그인</a>
+                    <a href="{% url 'register' %}">회원가입</a>
+                {% endif %}
+            </div>
+        </div>
+</body>
+</html>

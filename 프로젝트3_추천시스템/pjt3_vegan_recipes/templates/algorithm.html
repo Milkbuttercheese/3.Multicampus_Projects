@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Blue-Shelter</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<!--메인페이지 : 서비스명-->
+
+<!--서비스 목적-->
+<section class="introduce">
+    <div>
+        <h2>알고리즘 관리 페이지</h2>
+        <p> 알고리즘 테스트 및 추천 모델을 업데이트할 때 사용하기 위해 운영자용으로 제작되었습니다</p>
+    </div>
+</section>
+
+<!--서비스 내용-->
+<section class="알고리즘 갱신 / 더미 데이터 제작">
+    <div>
+        <br></br>
+        <div>
+            <h3>알고리즘 갱신 / 더미 데이터 제작(1회성 시연용)</h3>
+        </div>
+        <div class="row">
+            <div class="offter">
+                <p> 클러스터링 업데이트 하기</p>
+                <form id="Clustering" action="{% url 'update_cluster'  %}" method="post">{% csrf_token %}
+                    <input class="btn" type="submit" value="업데이트">
+                </form>
+            </div>
+            <div class="offter">
+                <p> CBF 모델 업데이트하기 </p>
+                <form id="Update_CBF" action="{% url 'update_CBF'  %}" method="post">{% csrf_token %}
+                    <input class="btn" type="submit" value="업데이트">
+                </form>
+            </div>
+            <div class="offter">
+                <p> CF 모델 업데이트하기 (주의:학습시간 길음)</p>
+                <form id="Update_CF" action="{% url 'update_CF'  %}" method="post">{% csrf_token %}
+                    <input class="btn" type="submit" value="업데이트">
+                </form>
+            </div>
+            <div class="offter">
+                <p> 더미데이터 제작</p>
+                <form id="Make_Dummy" action="{% url 'make_dummy'  %}" method="post">{% csrf_token %}
+                    <input class="btn" type="submit" value="업데이트">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="알고리즘 구동 테스트">
+    <div>
+        <br></br>
+        <div>
+            <h3>알고리즘 구동 테스트</h3>
+        </div>
+        <div class="offter">
+            <div class="offter">
+                <p> 특정 유저의 평점정보 확인하기</p>
+                <form id="rating" action="{% url 'show_rating'  %}" method="post">{% csrf_token %}
+                    <input class="rating" type="text" placeholder="ID를 입력하세요" aria-label="Search"
+                           name="user_id" >
+                    <input class="btn" type="submit" value="입력">
+                </form>
+            </div>
+            <div class="offter">
+                <p>CBF 모델 구동하기</p>
+                <form id="CBF" action="{% url 'algorithm'  %}" method="post">{% csrf_token %}
+                    <input class="CBF" type="text" placeholder="ID를 입력하세요" aria-label="Search"
+                           name="user_id" >
+                    <input class="btn" type="submit" value="입력">
+                </form>
+            </div>
+            <div class="offter">
+                <p>CF 모델 구동하기</p>
+                <form id="CF" action="{% url 'show_CF'  %}" method="post">{% csrf_token %}
+                    <input class="CF" type="text" placeholder="ID를 입력하세요" aria-label="Search"
+                           name="user_id" >
+                    <input class="btn" type="submit" value="입력">
+                </form>
+                <div id="CBF_Model">
+                    <div class="list">
+<!--                        {% for data in lists %}-->
+                    </div>
+                    <table class="CBF_Model">
+                        <tbody>
+                        <tr>
+                            {% for a in recommended_recipe %}
+                                <td>{{ a }}</td>
+                            {% endfor %}
+<!--                            {% if recommended_recipe %}-->
+<!--                            <td> User_Preferred_Recipes </td>-->
+<!--                            <td>{{ recommended_recipe }}</td>-->
+<!--                            {% endif %}-->
+                        </tr>
+<!--                        <tr>-->
+<!--                            <td>Recommended_Recipes</td>-->
+<!--                            <td>{{ data.recommended_recipe }}</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td>Ingredients_Cosine_Similarities</td>-->
+<!--                            <td>{{ data.ingredinets_cosine_similarity }}</td>-->
+<!--                        </tr>-->
+                        </tbody>
+                    </table>
+<!--                        {% endfor %}-->
+                </div>
+            </div>
+
+        </div>
+            <div class="offer">
+                <p class="select_dist">CF 구동 테스트. ID를 입력하세요</p>
+                <input class="current_dist" type="text" name="dist" value="10" id="dist-in">
+                <input class="btn" type="submit" value="입력">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yoga Studio Template">
+    <meta name="keywords" content="Yoga, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fruit Fruit</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
+    <link rel="icon" href="../../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Log in / out -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Log out <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section Begin -->
+    <header class="header-section-other">
+        <div class="container-fluid hero-search set-bg" data-setbg="../../static/img/search-bg.jpg">
+            <div class="logo" style="z-index: 2;">
+                <a href=""><img src="../../static/img/logo/Fruit_Fruit_2_clear.png" alt=""></a>
+            </div>
+            <div class="nav-menu">
+                <nav class="main-menu mobile-menu">
+                    <ul>
+                        <li><a href="/main_login">Recommend</a></li>
+                        <li><a href="/search_result">Search Recipe</a></li>
+                        <li><a href="/pinned_recipe">Pinned Recipe</a></li>
+                        <li><a href="/about_us">About Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+
+    <!-- Single Recipe Section Begin -->
+    <section class="single-page-recipe spad" style="margin-top: 200px;">
+        <div class="recipe-top">
+            <div class="container-fluid">
+                <div class="recipe-title">
+                    <!-- Recipe Title -->
+                    <h2>{{ list.title }}</h2>
+                    <h3 style="color: #F3835F;">{{ category_region }}</h3>
+                </div>
+                <div style="text-align: center;">
+                    {% if list.image %}
+                        <img class="recipe-image" src="{{ list.image }}" alt="" style="border-radius: 50%; width: 700px;">
+                    {% else %}
+                        <img src="../../static/img/logo/Fruit_Fruit_2_clear.png">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="ingredients-item">
+                        <div class="intro-item">
+                            {% if list.image %}
+                                <img src="{{ list.image }}" alt=".">
+                            {% else %}
+                                <img src="../../static/img/logo/Fruit_Fruit_2_clear.png">
+                            {% endif %}
+
+                            <!-- Recipe Title -->
+                            <h2>{{ list.title }}</h2>
+
+                            <!-- rating -->
+                            {% for data in rated_stars %}
+                                <div class="rating">
+
+                                    {{ data.stars }}
+
+<!--                                <i class="fa fa-star"></i>-->
+<!--                                <i class="fa fa-star"></i>-->
+<!--                                <i class="fa fa-star"></i>-->
+<!--                                <i class="fa fa-star"></i>-->
+<!--                                <i class="fa fa-star"></i>-->
+                                </div>
+<!--                            <div class="reviews">Please Rate This Recipe!</div>-->
+                            <!--별점주기-->
+                                {% if data.stars %}
+                                    <p>Thanks for rating!</p>
+<!--                                {% else %}-->
+<!--                                    <form method="post" action="/rate/{{ list.recipe_id }}"> {% csrf_token %}-->
+<!--                                        <div class="form-check form-check-inline">-->
+<!--                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio1" value="1">-->
+<!--                                          <label class="form-check-label" for="inlineRadio1">1</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="form-check form-check-inline">-->
+<!--                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio2" value="2">-->
+<!--                                          <label class="form-check-label" for="inlineRadio2">2</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="form-check form-check-inline">-->
+<!--                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio3" value="3">-->
+<!--                                          <label class="form-check-label" for="inlineRadio3">3</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="form-check form-check-inline">-->
+<!--                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio4" value="4">-->
+<!--                                          <label class="form-check-label" for="inlineRadio4">4</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="form-check form-check-inline">-->
+<!--                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio5" value="5">-->
+<!--                                          <label class="form-check-label" for="inlineRadio5">5</label>-->
+<!--                                        </div>-->
+<!--                                        <button type="submit" class="black-btn">Rate It!</button>-->
+<!--                                    </form>-->
+                                {% endif %}
+                            {% endfor %}
+                                   <form method="post" action="/rate/{{ list.recipe_id }}"> {% csrf_token %}
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio1" value="1">
+                                          <label class="form-check-label" for="inlineRadio1">1</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio2" value="2">
+                                          <label class="form-check-label" for="inlineRadio2">2</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio3" value="3">
+                                          <label class="form-check-label" for="inlineRadio3">3</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio4" value="4">
+                                          <label class="form-check-label" for="inlineRadio4">4</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio5" value="5">
+                                          <label class="form-check-label" for="inlineRadio5">5</label>
+                                        </div>
+                                        <button type="submit" class="black-btn">Rate It!</button>
+                                    </form>
+
+                            <div class="recipe-time">
+                                <ul>
+                                    <li>Cook time: <span>{{ list.time }}</span></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ingredient-list">
+                            <div class="recipe-btn" style="text-align: center;">
+                                <div style="display: inline-block;">
+                                    <a href="{{ list.link }}">Go Website</a>
+                                    {% if pin_recipe.pinned_length == 0 %}
+                                        <a href="/pin_recipe/{{ list.recipe_id }}" class="black-btn">Pin Recipe</a>
+                                    {% else %}
+                                        <a href="#" class="black-btn">Pinned!</a>
+                                    {% endif %}
+                                </div>
+
+                            </div>
+                            <div class="list-item">
+                                <h5>Ingredients</h5>
+                                <div class="dressing-list">
+                                    <ul>
+                                        {% for ingredient in ingredient_list %}
+                                            <li>{{ ingredient }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nutrition-fact">
+                        <div class="nutri-title">
+                            <h6>Nutrition Facts</h6>
+                            <span>Serves {{ list.serving }}</span>
+                        </div>
+                        <ul>
+                            <li>Chalories: {{ list.calories }}</li>
+                            <li>Carbs: {{ list.carbs }}</li>
+                            <li>Protein: {{ list.protein }}</li>
+                            <li>Total Fat: {{ list.total_fat }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="recipe-right">
+                        <div class="instruction-list">
+                            <h3>Instructions</h3>
+                            <ul>
+                                {% for data in recipe_list %}
+                                    <li>
+                                        {{ data }}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Single Recipe Section End -->
+
+
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copyright-text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy; 연봉1조(멀티캠퍼스 데이터사이언스/엔지니어링 15,16회 최종프로젝트 1조) All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search model -->
+	<div class="search-model">
+		<div class="h-100 d-flex align-items-center justify-content-center">
+			<div class="search-close-switch">+</div>
+			<form class="search-model-form">
+				<input type="text" id="search-input" placeholder="Search here.....">
+			</form>
+		</div>
+	</div>
+	<!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="../../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../../static/js/bootstrap.min.js"></script>
+    <script src="../../static/js/jquery.slicknav.js"></script>
+    <script src="../../static/js/jquery.nice-select.min.js"></script>
+    <script src="../../static/js/mixitup.min.js"></script>
+    <script src="../../static/js/main.js"></script>
+</body>
+
+</html>

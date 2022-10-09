@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/multi_project3_vegan.iml" filepath="$PROJECT_DIR$/.idea/multi_project3_vegan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../프로젝트3_머신러닝서비스/1.코드파일/프로젝트코드(for_Django)/.idea/프로젝트코드(for_Django).iml" filepath="$PROJECT_DIR$/../프로젝트3_머신러닝서비스/1.코드파일/프로젝트코드(for_Django)/.idea/프로젝트코드(for_Django).iml" />
+    </modules>
+  </component>
+</project>
